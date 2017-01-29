@@ -37,15 +37,21 @@ class Alert: UIView {
         super.layoutSubviews()
     }
     
+    
+  
+    
     func showAlert(viewController: UIViewController) {
+        containerView.isHidden = false 
         containerView.frame = UIScreen.main.bounds
         containerView.backgroundColor = UIColor.blue
         containerView.center = CGPoint(x: UIScreen.main.bounds.width/2, y: UIScreen.main.bounds.height/2)
         addLoadingView()
         addSubviews(viewController: viewController)
+        viewController.view.bringSubview(toFront: containerView)
     }
     
-    func hideAlert(viewController:UIViewController){
+    func hideAlert(viewController: UIViewController) {
+        containerView.isHidden = true
         viewController.view.sendSubview(toBack: containerView)
     }
     

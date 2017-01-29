@@ -71,4 +71,9 @@ class BaseAlertView: UIView {
         alertBanner.titleLabel.text = title
     }
     
+    func setupBorder(color: UIColor) {
+        layer.borderColor = color.cgColor
+        layer.borderWidth = 1
+    }
+    
 }
