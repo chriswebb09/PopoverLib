@@ -8,14 +8,10 @@
 
 import UIKit
 
-
-
-
 struct AlertColors {
     static let red = UIColor(red:0.92, green:0.18, blue:0.18, alpha:1.0)
     static let blue = UIColor(red:0.16, green:0.53, blue:0.87, alpha:1.0)
 }
-
 
 class Alert: UIView {
     
@@ -37,11 +33,8 @@ class Alert: UIView {
         super.layoutSubviews()
     }
     
-    
-  
-    
     func showAlert(viewController: UIViewController) {
-        containerView.isHidden = false 
+        containerView.isHidden = false
         containerView.frame = UIScreen.main.bounds
         containerView.backgroundColor = UIColor.blue
         containerView.center = CGPoint(x: UIScreen.main.bounds.width/2, y: UIScreen.main.bounds.height/2)

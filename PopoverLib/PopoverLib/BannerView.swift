@@ -30,7 +30,7 @@ class BannerView: UIView {
     }
     
     public func setTitle(title:String) {
-        titleLabel.text = title 
+        titleLabel.text = title
     }
     
 }

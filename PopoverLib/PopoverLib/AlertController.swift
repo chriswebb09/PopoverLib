@@ -9,8 +9,10 @@
 import UIKit
 
 class AlertController: UIViewController {
+    
     let alert: Alert = Alert()
     let tap = UIGestureRecognizer(target: self, action: #selector(showAlert))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         alert.layoutSubviews()
@@ -27,15 +29,10 @@ class AlertController: UIViewController {
         nextButton.addTarget(self, action: #selector(buttonMethodOne), for: .touchUpInside)
         alert.loadingView.alertActions.addButtonsForType(buttons: [newButton, nextButton], type: .twoButton)
         alert.showAlert(viewController: self)
-        //view.addGestureRecognizer(tap)
-        //view.isUserInteractionEnabled = false
     }
-    
     
     func buttonMethodOne() {
         print("here")
-       // view.isUserInteractionEnabled = true
-       // let tap = UIGestureRecognizer(target: self, action: #selector(showAlert))
         alert.hideAlert(viewController: self)
         view.addGestureRecognizer(tap)
     }
@@ -44,8 +41,5 @@ class AlertController: UIViewController {
         print("show alert")
         alert.showAlert(viewController: self)
     }
-    
-    
-    
 }
 
