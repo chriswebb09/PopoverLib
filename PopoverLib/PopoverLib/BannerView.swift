@@ -8,9 +8,9 @@
 
 import UIKit
 
-class BannerView: UIView {
+final class BannerView: UIView {
     
-    var titleLabel: UILabel = {
+    public var titleLabel: UILabel = {
         let titleLabel = UILabel()
         return titleLabel
     }()

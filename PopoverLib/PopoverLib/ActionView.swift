@@ -10,7 +10,7 @@ import UIKit
 
 class ActionView: UIView {
     
-     var alertType: AlertType!
+    var alertType: AlertType!
     
     override func layoutSubviews() {
         super.layoutSubviews()

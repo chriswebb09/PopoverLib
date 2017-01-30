@@ -10,7 +10,7 @@ import UIKit
 
 class ContentView: UIView {
     
-    var contentLabel: UILabel = {
+    public var contentLabel: UILabel = {
         let titleLabel = UILabel()
         return titleLabel
     }()
