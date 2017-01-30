@@ -18,6 +18,7 @@
 		A709DA0A1E3EA9900051CC85 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A709DA091E3EA9900051CC85 /* ContentView.swift */; };
 		A709DA0C1E3EA99F0051CC85 /* ActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A709DA0B1E3EA99F0051CC85 /* ActionView.swift */; };
 		A709DA0E1E3EAA180051CC85 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A709DA0D1E3EAA180051CC85 /* Alert.swift */; };
+		A7E380AD1E3EDE9F00D7BE31 /* ButtonTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E380AC1E3EDE9F00D7BE31 /* ButtonTypes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		A709DA091E3EA9900051CC85 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A709DA0B1E3EA99F0051CC85 /* ActionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionView.swift; sourceTree = "<group>"; };
 		A709DA0D1E3EAA180051CC85 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		A7E380AC1E3EDE9F00D7BE31 /* ButtonTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonTypes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				A709DA091E3EA9900051CC85 /* ContentView.swift */,
 				A709DA0B1E3EA99F0051CC85 /* ActionView.swift */,
 				A709DA0D1E3EAA180051CC85 /* Alert.swift */,
+				A7E380AC1E3EDE9F00D7BE31 /* ButtonTypes.swift */,
 			);
 			path = PopoverLib;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				A709DA0A1E3EA9900051CC85 /* ContentView.swift in Sources */,
 				A709DA061E3EA8DB0051CC85 /* BaseAlertView.swift in Sources */,
 				A709D9DA1E3EA8AF0051CC85 /* AlertController.swift in Sources */,
+				A7E380AD1E3EDE9F00D7BE31 /* ButtonTypes.swift in Sources */,
 				A709D9D81E3EA8AF0051CC85 /* AppDelegate.swift in Sources */,
 				A709DA0E1E3EAA180051CC85 /* Alert.swift in Sources */,
 			);
@@ -520,6 +524,7 @@
 				A709D9FE1E3EA8AF0051CC85 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A709D9FF1E3EA8AF0051CC85 /* Build configuration list for PBXNativeTarget "PopoverLibTests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +533,7 @@
 				A709DA011E3EA8AF0051CC85 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A709DA021E3EA8AF0051CC85 /* Build configuration list for PBXNativeTarget "PopoverLibUITests" */ = {
 			isa = XCConfigurationList;
@@ -536,6 +542,7 @@
 				A709DA041E3EA8AF0051CC85 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -11,8 +11,9 @@ import UIKit
 class ContentView: UIView {
     
     public var contentLabel: UILabel = {
-        let titleLabel = UILabel()
-        return titleLabel
+        let contentLabel = UILabel()
+        contentLabel.textAlignment = .center
+        return contentLabel
     }()
     
     override func layoutSubviews() {

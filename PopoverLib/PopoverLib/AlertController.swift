@@ -14,8 +14,12 @@ class AlertController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.backgroundColor = UIColor.white
+        navigationController?.navigationBar.isOpaque = true 
+        navigationController?.navigationBar.topItem?.title = "Alert Popups"
         alert.layoutSubviews()
         view.backgroundColor = UIColor.lightGray
+        alert.loadingView.setColor(color: AlertColors.blue)
         setupAlert()
     }
     
@@ -31,7 +35,7 @@ class AlertController: UIViewController {
         alert.loadingView.setAlertContent(content: "This is the content of the alert!")
         let selectors = [#selector(buttonMethodOne), #selector(buttonMethodTwo)]
         addMethodsToButtons(alertType: .twoButton, buttons: buttons, selectors: selectors)
-        alert.loadingView.alertActions.addButtonsForType(buttons: buttons, type: .twoButton)
+        alert.loadingView.alertActions.addButtonsForType(buttons: buttons, type: .twoButton, color: [UIColor.purple, UIColor.blue])
         alert.showAlert(viewController: self)
     }
     
@@ -42,7 +46,7 @@ class AlertController: UIViewController {
         alert.loadingView.setAlertContent(content: "This is the content of the alert!")
         let selectors = [#selector(buttonMethodOne), #selector(buttonMethodTwo)]
         addMethodsToButtons(alertType: .oneButton, buttons: buttons, selectors: selectors)
-        alert.loadingView.alertActions.addButtonsForType(buttons: buttons, type: .oneButton)
+        alert.loadingView.alertActions.addButtonsForType(buttons: buttons, type: .oneButton, color: [AlertColors.blue])
         alert.showAlert(viewController: self)
     }
     
@@ -66,20 +70,32 @@ class AlertController: UIViewController {
     }
     
     dynamic func buttonMethodOne() {
+        setShadowAlertView()
         view.backgroundColor = UIColor.purple
         alert.hideAlert(viewController: self)
+        alert.loadingView.alertActions.alertType = .twoButton
+        setupTwoButtonAlert()
+        alert.loadingView.setBannerTextColor(color: UIColor.white)
+        alert.showAlert(viewController: self)
+        alert.containerView.backgroundColor = UIColor.cyan
+    }
+    
+    dynamic func buttonMethodTwo() {
+        setShadowAlertView()
+        view.backgroundColor = UIColor.cyan
+        alert.hideAlert(viewController: self)
+        alert.hideAlert(viewController: self)
+        alert.loadingView.setBannerTextColor(color: UIColor.white)
         alert.loadingView.alertActions.alertType = .twoButton
         setupTwoButtonAlert()
         alert.showAlert(viewController: self)
     }
     
-    dynamic func buttonMethodTwo() {
-        view.backgroundColor = UIColor.cyan
-        alert.hideAlert(viewController: self)
-        alert.hideAlert(viewController: self)
-        alert.loadingView.alertActions.alertType = .twoButton
-        setupTwoButtonAlert()
-        alert.showAlert(viewController: self)
+    dynamic func setShadowAlertView() {
+        alert.loadingView.layer.masksToBounds = false
+        alert.loadingView.layer.shadowOffset = CGSize(width: 5, height: 5)
+        alert.loadingView.layer.shadowRadius = 8
+        alert.loadingView.layer.shadowOpacity = 0.3
     }
 }
 

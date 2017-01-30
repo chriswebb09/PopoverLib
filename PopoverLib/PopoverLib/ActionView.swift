@@ -16,14 +16,14 @@ class ActionView: UIView {
         super.layoutSubviews()
     }
     
-    public func addButtonsForType(buttons: [UIButton], type: AlertType) {
+    public func addButtonsForType(buttons: [UIButton], type: AlertType, color: [UIColor]) {
         switch type {
         case .oneButton:
             alertType = type
             setupOneButton(button: buttons[0])
         default:
             alertType = type
-            setupTwoButton(buttons: buttons)
+            setupTwoButton(buttons: buttons, buttonColors: color)
         }
     }
     
@@ -36,7 +36,9 @@ class ActionView: UIView {
         button.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 1).isActive = true
     }
     
-    private func setupTwoButton(buttons: [UIButton]) {
+    private func setupTwoButton(buttons: [UIButton], buttonColors: [UIColor]) {
+        let zipped = zip(buttons, buttonColors)
+        zipped.flatMap { $0.0.backgroundColor = $0.1 }
         buttons.forEach { button in
             addSubview(button)
             button.translatesAutoresizingMaskIntoConstraints = false
@@ -46,7 +48,7 @@ class ActionView: UIView {
         }
         buttons[0].leftAnchor.constraint(equalTo: leftAnchor).isActive = true
         buttons[1].rightAnchor.constraint(equalTo: rightAnchor).isActive = true
-        buttons[0].backgroundColor = UIColor.brown
-        buttons[1].backgroundColor = UIColor.red
     }
+    
+    
 }

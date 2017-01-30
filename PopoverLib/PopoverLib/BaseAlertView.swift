@@ -12,7 +12,6 @@ enum AlertType {
     case oneButton, twoButton
 }
 
-
 class BaseAlertView: UIView {
     
     var views: [UIView]!
@@ -54,13 +53,12 @@ class BaseAlertView: UIView {
         alertBanner.topAnchor.constraint(equalTo: topAnchor).isActive = true
         alertContent.topAnchor.constraint(equalTo: alertBanner.bottomAnchor).isActive = true
         alertActions.topAnchor.constraint(equalTo: alertContent.bottomAnchor).isActive = true
-        
     }
     
-    func setColor(color: UIColor) {
+    public func setColor(color: UIColor) {
         alertBanner.backgroundColor = color
         alertContent.backgroundColor = UIColor.white
-        alertActions.backgroundColor = UIColor.lightGray
+        alertActions.backgroundColor = AlertColors.red
     }
     
     fileprivate func setHeights(banner: UIView) {
@@ -69,6 +67,10 @@ class BaseAlertView: UIView {
     
     public func setBannerTitle(title:String) {
         alertBanner.titleLabel.text = title
+    }
+    
+    public func setBannerTextColor(color: UIColor) {
+        alertBanner.titleLabel.textColor = color
     }
     
     func setupBorder(color: UIColor) {

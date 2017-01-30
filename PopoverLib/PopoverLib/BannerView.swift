@@ -12,6 +12,7 @@ final class BannerView: UIView {
     
     public var titleLabel: UILabel = {
         let titleLabel = UILabel()
+        titleLabel.textAlignment = .center 
         return titleLabel
     }()
     

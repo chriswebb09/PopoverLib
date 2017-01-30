@@ -24,7 +24,7 @@ public final class Alert: UIView {
     var loadingView: BaseAlertView = {
         let loadingView = BaseAlertView()
         loadingView.layoutSubviews()
-        loadingView.layer.cornerRadius = 10
+        loadingView.layer.cornerRadius = 6
         loadingView.backgroundColor = UIColor.white
         return loadingView
     }()
@@ -36,7 +36,7 @@ public final class Alert: UIView {
     public func showAlert(viewController: UIViewController) {
         containerView.isHidden = false
         containerView.frame = UIScreen.main.bounds
-        containerView.backgroundColor = UIColor.blue
+        containerView.backgroundColor = UIColor.lightGray
         containerView.center = CGPoint(x: UIScreen.main.bounds.width/2, y: UIScreen.main.bounds.height/2)
         addLoadingView()
         addSubviews(viewController: viewController)
