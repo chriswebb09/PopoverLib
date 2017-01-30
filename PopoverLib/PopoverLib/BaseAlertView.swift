@@ -76,4 +76,8 @@ class BaseAlertView: UIView {
         layer.borderWidth = 1
     }
     
+    func setAlertContent(content: String) {
+        alertContent.contentLabel.text = content
+    }
+    
 }

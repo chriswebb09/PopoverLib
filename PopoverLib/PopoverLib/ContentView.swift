@@ -10,7 +10,7 @@ import UIKit
 
 class ContentView: UIView {
     
-    var titleLabel: UILabel = {
+    var contentLabel: UILabel = {
         let titleLabel = UILabel()
         return titleLabel
     }()
@@ -21,12 +21,12 @@ class ContentView: UIView {
     }
     
     func setupConstraints() {
-        addSubview(titleLabel)
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        titleLabel.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.75).isActive = true
-        titleLabel.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.8).isActive = true
+        addSubview(contentLabel)
+        contentLabel.translatesAutoresizingMaskIntoConstraints = false
+        contentLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        contentLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        contentLabel.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.75).isActive = true
+        contentLabel.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.8).isActive = true
     }
     
 }

@@ -25,6 +25,7 @@ class AlertController: UIViewController {
         nextButton.setTitle("Next Button", for: .normal)
         nextButton.titleLabel?.text = "New Button"
         let buttons = [newButton, nextButton]
+        alert.loadingView.setAlertContent(content: "This is the content of the alert!")
         let selectors = [#selector(buttonMethodOne), #selector(buttonMethodTwo)]
         addMethodsToButtons(alertType: .twoButton, buttons: buttons, selectors: selectors)
         alert.loadingView.alertActions.addButtonsForType(buttons: [newButton, nextButton], type: .twoButton)
