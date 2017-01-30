@@ -33,7 +33,7 @@ class AlertController: UIViewController {
     }
     
     
-    func addMethodsToButtons(alertType: AlertType, buttons: [UIButton], selectors: [Selector]) {
+    public func addMethodsToButtons(alertType: AlertType, buttons: [UIButton], selectors: [Selector]) {
         switch alertType {
         case .oneButton:
             buttons[0].addTarget(self, action: selectors[0], for: .touchUpInside)
@@ -46,12 +46,11 @@ class AlertController: UIViewController {
         }
     }
     
-    
-    func buttonMethodOne() {
+    dynamic func buttonMethodOne() {
         alert.hideAlert(viewController: self)
     }
     
-    func buttonMethodTwo() {
+    dynamic func buttonMethodTwo() {
         print("--------------------------")
         print("two")
         alert.hideAlert(viewController: self)

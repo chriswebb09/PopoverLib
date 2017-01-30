@@ -26,6 +26,41 @@ class PopoverLibTests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
+    func testBannerView() {
+        let bannerView = BannerView()
+        bannerView.layoutSubviews()
+        bannerView.setTitle(title: "Banner")
+        XCTAssertNotNil(bannerView)
+        XCTAssertEqual(bannerView.titleLabel.text, "Banner")
+    }
+    
+    func testContentView() {
+        let contentView = ContentView()
+        contentView.layoutSubviews()
+        contentView.contentLabel.text = "Content"
+        XCTAssertNotNil(contentView)
+        XCTAssertEqual(contentView.contentLabel.text, "Content")
+    }
+    
+    func testActions() {
+        let actionView = ActionView()
+        actionView.layoutSubviews()
+        XCTAssertNotNil(actionView)
+    }
+    
+    func testBaseAlert() {
+        let baseAlert = BaseAlertView()
+        baseAlert.layoutSubviews()
+        XCTAssertNotNil(baseAlert)
+    }
+    
+    func testAlert() {
+        let alert = Alert()
+        alert.layoutSubviews()
+        alert.loadingView.setBannerTitle(title: "Banner")
+        XCTAssertEqual(alert.loadingView.alertBanner.titleLabel.text, "Banner")
+    }
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {

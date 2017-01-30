@@ -13,9 +13,7 @@ struct AlertColors {
     static let blue = UIColor(red:0.16, green:0.53, blue:0.87, alpha:1.0)
 }
 
-class Alert: UIView {
-    
-   
+public class Alert: UIView {
     
     lazy var containerView: UIView = {
         let containerView = UIView()
@@ -31,11 +29,11 @@ class Alert: UIView {
         return loadingView
     }()
     
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
     }
     
-    func showAlert(viewController: UIViewController) {
+    public func showAlert(viewController: UIViewController) {
         containerView.isHidden = false
         containerView.frame = UIScreen.main.bounds
         containerView.backgroundColor = UIColor.blue
@@ -45,18 +43,17 @@ class Alert: UIView {
         viewController.view.bringSubview(toFront: containerView)
     }
     
-    func hideAlert(viewController: UIViewController) {
+    public func hideAlert(viewController: UIViewController) {
         containerView.isHidden = true
-       // viewController.view.sendSubview(toBack: containerView)
     }
     
-    func addLoadingView() {
+    private func addLoadingView() {
         loadingView.frame = CGRect(x:0, y:0, width: UIScreen.main.bounds.width * 0.9, height:UIScreen.main.bounds.height * 0.35)
         loadingView.center = CGPoint(x: UIScreen.main.bounds.midX, y: UIScreen.main.bounds.midY)
         loadingView.clipsToBounds = true
     }
     
-    func addSubviews(viewController: UIViewController) {
+    private func addSubviews(viewController: UIViewController) {
         addLoadingView()
         containerView.addSubview(loadingView)
         viewController.view.addSubview(containerView)

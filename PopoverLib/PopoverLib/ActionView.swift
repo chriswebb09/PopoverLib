@@ -27,7 +27,7 @@ class ActionView: UIView {
         }
     }
     
-    func setupOneButton(button: UIButton) {
+    private func setupOneButton(button: UIButton) {
         addSubview(button)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
@@ -36,7 +36,7 @@ class ActionView: UIView {
         button.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 1).isActive = true
     }
     
-    func setupTwoButton(buttons: [UIButton]) {
+    private func setupTwoButton(buttons: [UIButton]) {
         buttons.forEach { button in
             addSubview(button)
             button.translatesAutoresizingMaskIntoConstraints = false
