@@ -19,7 +19,6 @@ class AlertController: UIViewController {
         setupAlert()
     }
     
-    
     public func addMethodsToButtons(alertType: AlertType, buttons: [UIButton], selectors: [Selector]) {
         let zipped = zip(buttons, selectors)
         zipped.flatMap { $0.0.addTarget(self, action: $0.1, for: .touchUpInside) }
@@ -46,7 +45,6 @@ class AlertController: UIViewController {
         alert.loadingView.alertActions.addButtonsForType(buttons: buttons, type: .oneButton)
         alert.showAlert(viewController: self)
     }
-    
     
     func setupButtons() -> [UIButton] {
         let newButton = UIButton()
@@ -75,7 +73,6 @@ class AlertController: UIViewController {
         alert.showAlert(viewController: self)
     }
     
-    
     dynamic func buttonMethodTwo() {
         view.backgroundColor = UIColor.cyan
         alert.hideAlert(viewController: self)
@@ -84,6 +81,5 @@ class AlertController: UIViewController {
         setupTwoButtonAlert()
         alert.showAlert(viewController: self)
     }
-    
 }
 

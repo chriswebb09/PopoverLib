@@ -28,5 +28,4 @@ class ContentView: UIView {
         contentLabel.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.75).isActive = true
         contentLabel.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.8).isActive = true
     }
-    
 }

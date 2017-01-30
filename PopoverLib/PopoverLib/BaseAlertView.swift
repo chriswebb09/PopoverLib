@@ -79,5 +79,4 @@ class BaseAlertView: UIView {
     func setAlertContent(content: String) {
         alertContent.contentLabel.text = content
     }
-    
 }
