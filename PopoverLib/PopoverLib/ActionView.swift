@@ -10,6 +10,8 @@ import UIKit
 
 class ActionView: UIView {
     
+     var alertType: AlertType!
+    
     override func layoutSubviews() {
         super.layoutSubviews()
     }
@@ -17,8 +19,10 @@ class ActionView: UIView {
     public func addButtonsForType(buttons: [UIButton], type: AlertType) {
         switch type {
         case .oneButton:
+            alertType = type
             setupOneButton(button: buttons[0])
         default:
+            alertType = type
             setupTwoButton(buttons: buttons)
         }
     }

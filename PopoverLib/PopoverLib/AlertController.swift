@@ -11,7 +11,6 @@ import UIKit
 class AlertController: UIViewController {
     
     let alert: Alert = Alert()
-    let tap = UIGestureRecognizer(target: self, action: #selector(showAlert))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,24 +21,39 @@ class AlertController: UIViewController {
         let newButton = UIButton()
         newButton.setTitle("New Button", for: .normal)
         newButton.titleLabel?.text = "New Button"
-        newButton.addTarget(self, action: #selector(buttonMethodOne), for: .touchUpInside)
         let nextButton = UIButton()
         nextButton.setTitle("Next Button", for: .normal)
         nextButton.titleLabel?.text = "New Button"
-        nextButton.addTarget(self, action: #selector(buttonMethodOne), for: .touchUpInside)
+        let buttons = [newButton, nextButton]
+        let selectors = [#selector(buttonMethodOne), #selector(buttonMethodTwo)]
+        addMethodsToButtons(alertType: .twoButton, buttons: buttons, selectors: selectors)
         alert.loadingView.alertActions.addButtonsForType(buttons: [newButton, nextButton], type: .twoButton)
         alert.showAlert(viewController: self)
     }
     
-    func buttonMethodOne() {
-        print("here")
-        alert.hideAlert(viewController: self)
-        view.addGestureRecognizer(tap)
+    
+    func addMethodsToButtons(alertType: AlertType, buttons: [UIButton], selectors: [Selector]) {
+        switch alertType {
+        case .oneButton:
+            buttons[0].addTarget(self, action: selectors[0], for: .touchUpInside)
+        case .twoButton:
+            buttons.forEach { button in
+                selectors.forEach { selector in
+                    button.addTarget(self, action: selector, for: .touchUpInside)
+                }
+            }
+        }
     }
     
-    func showAlert() {
-        print("show alert")
-        alert.showAlert(viewController: self)
+    
+    func buttonMethodOne() {
+        alert.hideAlert(viewController: self)
+    }
+    
+    func buttonMethodTwo() {
+        print("--------------------------")
+        print("two")
+        alert.hideAlert(viewController: self)
     }
 }
 

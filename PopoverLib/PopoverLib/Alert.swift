@@ -15,6 +15,8 @@ struct AlertColors {
 
 class Alert: UIView {
     
+   
+    
     lazy var containerView: UIView = {
         let containerView = UIView()
         containerView.backgroundColor = UIColor.clear
@@ -45,7 +47,7 @@ class Alert: UIView {
     
     func hideAlert(viewController: UIViewController) {
         containerView.isHidden = true
-        viewController.view.sendSubview(toBack: containerView)
+       // viewController.view.sendSubview(toBack: containerView)
     }
     
     func addLoadingView() {
