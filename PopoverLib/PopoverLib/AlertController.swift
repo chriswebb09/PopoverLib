@@ -28,11 +28,11 @@ class AlertController: UIViewController {
     func setupTwoButtonAlert() {
         alert.loadingView.alertBanner.setTitle(title: "New Title")
         alert.loadingView.setupBorder(color: UIColor.black)
-        let buttons = setupButtons()
+        let buttons = setupTwoButtons()
         alert.loadingView.setAlertContent(content: "This is the content of the alert!")
         let selectors = [#selector(buttonMethodOne), #selector(buttonMethodTwo)]
-        addMethodsToButtons(alertType: .oneButton, buttons: buttons, selectors: selectors)
-        alert.loadingView.alertActions.addButtonsForType(buttons: buttons, type: .oneButton)
+        addMethodsToButtons(alertType: .twoButton, buttons: buttons, selectors: selectors)
+        alert.loadingView.alertActions.addButtonsForType(buttons: buttons, type: .twoButton)
         alert.showAlert(viewController: self)
     }
     
@@ -79,6 +79,10 @@ class AlertController: UIViewController {
     dynamic func buttonMethodTwo() {
         view.backgroundColor = UIColor.cyan
         alert.hideAlert(viewController: self)
+        alert.hideAlert(viewController: self)
+        alert.loadingView.alertActions.alertType = .twoButton
+        setupTwoButtonAlert()
+        alert.showAlert(viewController: self)
     }
     
 }
